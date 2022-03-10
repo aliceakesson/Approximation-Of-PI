@@ -46,7 +46,7 @@ namespace Approximation_Of_PI
             */
             #endregion 
 
-            #region The easiest proof, using the Gregory-Liebniz Series
+            #region The easiest "proof", using the Gregory-Liebniz Series
             int amountOfTerms = 1; 
             try
             {
@@ -68,6 +68,7 @@ namespace Approximation_Of_PI
             }
             PI *= 4;
 
+            Console.WriteLine("");
             Console.WriteLine(PI);
             #endregion
                 
