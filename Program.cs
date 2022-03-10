@@ -76,6 +76,47 @@ namespace Approximation_Of_PI
             //Console.WriteLine(Math.PI);
             #endregion
 
+            #region The BBP formula (doesn't completely work)
+            int levelOfPrecision = 1;
+            try
+            {
+                Console.WriteLine("Level of precision? (must be larger than 0)");
+                levelOfPrecision = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Couldn't convert the answer to integer");
+            };
+
+            if (levelOfPrecision < 1)
+                levelOfPrecision = 1;
+
+            decimal PI = 0m;
+            for (decimal k = 0; k < levelOfPrecision; k++)
+            {
+                decimal number = (decimal)((decimal)(1 / Math.Pow(16, (int)k)) * 
+                    ((4 / (8 * k + 1)) - (2 / (8 * k + 4) - (1 / (8 * k + 5) - (1 / (8 * k + 6))))));
+                PI += number;
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine(PI);
+            #endregion
+                
         }
+                                     
+         //static decimal HexPow(decimal num,  decimal k)
+        //{
+
+        //    decimal d = num;
+        //    for(decimal i = 0m; i < k; i++)
+        //    {
+        //        d *= num; 
+        //    }
+
+        //    return d; 
+
+        //}
     }
 }
