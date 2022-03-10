@@ -70,6 +70,10 @@ namespace Approximation_Of_PI
 
             Console.WriteLine(PI);
             #endregion
+                
+            #region I was kidding, this is the easiest way
+            //Console.WriteLine(Math.PI);
+            #endregion
 
         }
     }
