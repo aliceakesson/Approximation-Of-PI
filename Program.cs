@@ -50,7 +50,7 @@ namespace Approximation_Of_PI
             int amountOfTerms = 1; 
             try
             {
-                Console.WriteLine("How many terms? (must be larger than 1)");
+                Console.WriteLine("How many terms? (must be larger than 0)");
                 amountOfTerms = int.Parse(Console.ReadLine());
             } catch(FormatException fe) {
                 Console.WriteLine("");
@@ -77,6 +77,7 @@ namespace Approximation_Of_PI
             #endregion
 
             #region The BBP formula (doesn't completely work)
+            /*
             int levelOfPrecision = 1;
             try
             {
@@ -102,6 +103,7 @@ namespace Approximation_Of_PI
 
             Console.WriteLine("");
             Console.WriteLine(PI);
+            */
             #endregion
                 
         }
