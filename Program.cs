@@ -47,6 +47,7 @@ namespace Approximation_Of_PI
             #endregion 
 
             #region The easiest "proof", using the Gregory-Liebniz Series
+            /*
             int amountOfTerms = 1; 
             try
             {
@@ -74,6 +75,7 @@ namespace Approximation_Of_PI
                 
             #region I was kidding, this is the easiest way
             //Console.WriteLine(Math.PI);
+            */
             #endregion
 
             #region The BBP formula (doesn't completely work)
@@ -104,6 +106,45 @@ namespace Approximation_Of_PI
             Console.WriteLine("");
             Console.WriteLine(PI);
             */
+            #endregion
+                                     
+            #region Proof using the ratio between a square and the circle touching it (idea taken from https://www.youtube.com/watch?v=5cNnf_7e92Q&t=48s)
+
+            decimal radius = 1;
+            int amountOfDots = 10;
+            try
+            {
+                Console.WriteLine("How many dots?");
+                amountOfDots = int.Parse(Console.ReadLine());
+            } catch(FormatException fe) {
+                Console.WriteLine("");
+                Console.WriteLine("Couldn't convert the value to int");
+            }
+
+            if (amountOfDots < 10)
+                amountOfDots = 10;
+
+            decimal dotsInCircle = 0;
+            for(int i = 0; i < amountOfDots; i++)
+            {
+                bool inCircle = false;
+
+                Random rnd = new Random();
+                decimal xPos = (decimal)rnd.NextDouble() * 2 - 1;
+                decimal yPos = (decimal)rnd.NextDouble() * 2 - 1;
+
+                decimal magnitude = (decimal)Math.Sqrt((double)Math.Abs(xPos*xPos) + (double)Math.Abs(yPos*yPos));
+                if (magnitude <= radius)
+                    inCircle = true;
+
+                if (inCircle)
+                    dotsInCircle++; 
+            }
+
+            decimal PI = 4 * (decimal)(dotsInCircle/amountOfDots);
+            Console.WriteLine("");
+            Console.WriteLine(PI);
+
             #endregion
                 
         }
