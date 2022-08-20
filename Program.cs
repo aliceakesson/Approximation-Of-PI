@@ -71,11 +71,11 @@ namespace Approximation_Of_PI
 
             Console.WriteLine("");
             Console.WriteLine(PI);
+            */
             #endregion
                 
             #region I was kidding, this is the easiest way
             //Console.WriteLine(Math.PI);
-            */
             #endregion
 
             #region The BBP formula (doesn't completely work)
